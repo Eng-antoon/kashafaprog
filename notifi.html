@@ -39,38 +39,38 @@
 </head>
 <style>
     #whole {
-
         display: flex;
-        flex-direction: column;
-        height: fit-content;
-        align-items: center;
+    flex-direction: column;
+    align-items: center;
+    height: 83%;
 
     }
 
     .showing {
         border: 1px solid black;
-        height: fit-content;
-        width: 87%;
-        margin: 1vw;
-        font-size: 5vw;
-        font-weight: bold;
-        padding: 3vw;
-        font-family: amiri;
-        background-color: white;
+    height: 100%;
+    width: 87%;
+    margin: 1vw;
+    font-size: 5vw;
+    font-weight: bold;
+    padding: 3vw;
+    font-family: amiri;
+    background-color: white;
+    overflow: scroll;
     }
 
     #dis {
 
         border: 1px solid black;
-        height: fit-content;
-        width: 93%;
-        margin: 1vw;
-        font-size: 5vw;
-        font-weight: bold;
-        padding: 3vw;
-        font-family: amiri;
-        background-color: white;
-        margin-bottom: 3vw;
+    height: 68%;
+    width: 93%;
+    margin: 1vw;
+    font-size: 4vw;
+    font-weight: bold;
+    padding: 3vw;
+    font-family: amiri;
+    background-color: white;
+    margin-bottom: 3vw;
 
 
     }
@@ -395,7 +395,7 @@
 
     }
 
-
+/*
     function han() {
 
 
@@ -406,7 +406,7 @@
 
     $("#commenter").click(han);
 
-
+*/
 
 
     var db = firebase.firestore();
@@ -435,26 +435,13 @@
 
     function handleclick() {
 
-        x = $("#noti").val();
-        $("#noti").val(' ');
-
-        $("#bord").append("<br>" + x + "<br>");
-
+        var x = $("#dis").val();
+        $("#dis").val(' ');
         var db = firebase.firestore();
-        db.collection("kash").onSnapshot(handleDataRead);
-        function handleDataRead(objects) {
-            var n = objects.size;
-            var i = 0;
-            while (i < n) {
-                var id = objects.docs[i].id;
-                var data = objects.docs[i].data();
-                i = i + 1;
-                var object = { notifi: x };
+                var object = {notifi: x };
                 db.collection("kash").add(object);
             }
-        }
-    }
-
+        
 
 
     $("#too").click(handleclick);
