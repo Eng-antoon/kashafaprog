@@ -1,0 +1,474 @@
+<html>
+
+<head>
+
+    <link href='https://fonts.googleapis.com/css?family=Amiri' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <script src="jquery-3.3.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+</head>
+<style>
+    body {
+        background-color: #53F3C7;
+
+
+    }
+
+    .sora {
+        width: 53vw;
+        margin: 5vw;
+    }
+
+    .person {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        padding: 2%;
+        margin: 2%;
+
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        height: 20%;
+
+
+    }
+
+    .but {
+        width: 100%;
+        height: 50px;
+        margin: 2%;
+        font-size: 5vw;
+        font-weight: bold;
+        border: 1px solid #099770;
+   background-color: #8BFA56;
+    }
+
+    .para {
+        font-size: 30px;
+        direction: rtl;
+
+
+    }
+
+    #whole {
+        display: flex;
+        flex-direction: column;
+        direction: rtl;
+
+    }
+
+    #photo {
+        margin-left: 38vw;
+    width: 17%;
+    height: inherit;
+
+    }
+    #controller{
+
+        display: flex;
+    flex-direction: row;
+    height: 10%;
+    align-items: center;
+    justify-content: center;
+    direction: ltr;
+
+    }
+    #home{
+
+        width: 100%;
+        height: 50px;
+        margin: 2%;
+        font-size: 5vw;
+        font-weight: bold;
+        border: 1px solid #099770;
+   background-color: #8BFA56;
+
+    }
+
+
+
+    body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+  padding: 2vw;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.71);
+    overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+		
+	
+
+
+
+
+</style>
+
+
+<body>
+    <div id="whole" >
+        <div id="controller">
+                <span id="hel" style="font-size:30px;cursor:pointer; color: #011a1eb8;" onclick="openNav()" >&#9776; Menu</span>
+
+
+
+                <div id="mySidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a href="firstpage.html" onclick="closeNav()">Home page</a>
+                        <a href="content.html" onclick="closeNav()">Content of the year</a>
+                        <a href="points.html" onclick="closeNav()">Points</a>
+                        <a href="chicken.html" onclick="closeNav()">Chicken dinner</a>
+                        <a href="notifi.html" onclick="closeNav()">Notifications</a>
+                       
+                      
+                      </div>
+            
+        <img id="photo" src="tonykashafa.jpg"  onclick="closeNav()">
+        </div>
+        <div class="person"  onclick="closeNav()">
+            <button class="but" id="tony">
+                Tony Kamel
+            </button>
+            <img class="sora" src="tony.jpg">
+            <div class="info">
+                <p class="para" id="para1">
+                    -الاسم : كابتن انطون كامل
+                    <br>
+                    كابتن انطون غني عن التعريف في عالم البرمجه ..
+                    <br>
+                    اي حاجه تخص الانترنت يبقي الحل هو ..
+                    <br>
+                    راشق ٢٤ ساعه في النت ..
+                    <br>
+                    عاشق للبرمجه و في شويه volley علي شويه كوره كده خفيفه ..
+                    <br>
+                    كابتن انطون كلمه و انت مش لاقي حته تبات فيها لو عملت مصيبه هيكلمك و يهندلك و هيسمعك و هيضربك و
+                    هيخليك تبات عنده ..
+                    <br>
+                    الرقم: 01201048402
+                    <br>
+                </p>
+
+            </div>
+        </div>
+        <div class="person"  onclick="closeNav()">
+            <button class="but" id="edward">
+                Mina Edward
+            </button>
+            <img class="sora" src="minaedward.jpeg">
+            <div class="info">
+                <p class="para" id="para2">
+                    الاسم : كابتن مينا ادوارد
+                    <br>
+                    -دكتور سنان هيفيدك في المشاكل الصحيه اما في العاطفيه بلاش ..
+                    <br>
+                    بيحب التفاصيل ..و بيحب يجرب حاجات جديده ممكن تكلموا لو عايز تجرب حاجه جديده هيعملها معاك.💪
+                    <br>
+                    الرقم: 01016152275
+                    <br>
+
+                </p>
+
+            </div>
+        </div>
+        <div class="person"  onclick="closeNav()"> 
+            <button class="but" id="marco">
+                Marco Atef
+            </button>
+            <img class="sora" src="marco.jpeg">
+            <div class="info">
+                <p class="para" id="para3">
+                    الاسم : كابتن ماركو عاطف
+                    <br>
+                    هيضحكك هيضحكك مضايق قافش مش طايق حد كلمه هتضحك هتضحك و يمكن يخليك تعمل فيديو معاه ..
+                    <br>
+                    بيحب pes 2013 لو انت قديم كلمه هتنزلوا تسترجعوا كل الذكريات ..
+                    <br>
+                    الرقم: 01272700712
+                    <br>
+                </p>
+
+            </div>
+        </div>
+        <div class="person"  onclick="closeNav()">
+            <button class="but" id="osama">
+                Bisho Osama
+            </button>
+            <img class="sora" src="bishoosama.jpeg">
+            <div class="info">
+                <p class="para" id="para4">
+                    الاسم : كابتن بيشوي اسامه
+                    <br>
+                    مش عارف تغير صوره الprofile؟
+                    <br>
+                    عايز يبقي عندك فانز كتيره و الليكات ترن كلمه و هيظبطك ..
+                    <br>
+                    كابتن بيشو بيحب الاكل و عاشق للكومبيوتر و الشغل الphotoshop و كده ..كلمه ف اي حوار من دول هيظبطك و
+                    يا سلام بقي لو
+                    عايز تكلمه ف اي حاجه حاسسها ممله هيديك فكره تخليها مش ممله خالص جرب ..
+                    <br>
+                    الرقم: 01289552361
+                    <br>
+                </p>
+
+            </div>
+        </div>
+        <div class="person"  onclick="closeNav()">
+            <button class="but" id="markmaged">
+                Mark Maged
+            </button>
+            <img class="sora" src="marcmaged.jpeg">
+            <div class="info">
+                <p class="para" id="para5">
+                    الاسم : كابتن مارك ماجد
+                    <br>
+                    كابتن مارك عاشق للدراما و السينما كلمه و هيظبطك ..
+                    <br>
+                    لو عندك مشكله و محتاج حد هادي و يفكر معاك علي الهادي و يظبطك و يتناقش بعقل معاك يبقي الحل هو ..
+                    بس ابقي هاتله مسلسل و انت نازل تقابله
+                    <br>
+                    الرقم: 01063046758
+                    <br>
+                </p>
+
+            </div>
+        </div>
+        <div class="person"  onclick="closeNav()">
+            <button class="but" id="mina">
+                Mina Kamil
+            </button>
+            <img class="sora" src="minakamil.jpeg">
+            <div class="info">
+                <p class="para" id="para6">
+                    الاسم : كابتن مينا كميل
+                    <br>
+                    بصراحه هو متاخر دايما يعني لو كلمته اعمل حسابك هيتاخر عليك ..و يمكن ينسي حاجته معاك ..
+                    <br>
+                    يمتاز بالقدره علي العلاج الطبيعي لانه دكتور علاج طبيعي ..يعني كلمه ممكن يقلك هات مرهم و انت مروح او
+                    نام كويس او اسمع موسيقي ..
+                    <br>
+                    الكرش عنده اساسي يعني لو قلتله تعالي ناكل هيجي و ساعتها كلمه ف اي حاجه هتلاقيه ..لكن بعد الاكل
+                    هيخليك تدفع انت .
+
+                    <br>
+                    الرقم: 01285925949
+                    <br>
+                </p>
+
+            </div>
+        </div>
+        <div class="person"  onclick="closeNav()">
+            <button class="but" id="toshii">
+                Bisho Mahfouz
+            </button>
+            <img class="sora" src="toshi.jpeg">
+            <div class="info">
+                <p class="para" id="para7">
+                    الاسم : كابتن توشي
+                    <br>
+
+                    كابتن بيشوي محفوظ او توشي ممكن تكلمه ف اي وقت عن اي حاجه بس بشرطين ..
+                    <br>
+                    الاول ميكنش في ماتش للسيتي
+                    <br>
+                    الثاني انك تكون مش بتحب ليفربول ..
+                    <br>
+                    مش بيحب التفاصيل بس بيسمع كويس و يمتاز بالحلول المرضيه لجميع الاطراف ..
+                    <br>
+                    دكتور تحاليل بس بيقدر يديلك حلول تفيد نفسيتك جداا
+                    <br>
+                    الرقم: 01278206528
+                    <br>
+                </p>
+
+            </div>
+        </div>
+        <div class="person"  onclick="closeNav()">
+            <button class="but" id="andrew">
+                Andrew George
+            </button>
+            <img class="sora" src="andrewgeo.jpeg">
+            <div class="info">
+                <p class="para" id="para8">
+                    -الاسم : كابتن اندرو جورج ..
+                    <br>
+                    الي هيكلمه يبقي بيشتكي من القاده الي هما احنا ..
+                    <br>
+                    و ساعتها هنكدره و هنظبطه و هنجيبه يعني هنجيبه ..و هنخلي شكله زي شكل كابتن اندرو في الصوره بظبط ..
+                    <br>
+                    احنا حطينا الرقم عشان احنا الديموقراطيه عندنا اساسيه.
+                    <br>
+                    رقمه : 01228102507
+                    <br>
+
+                </p>
+
+            </div>
+        </div>
+        <div class="person"  onclick="closeNav()">
+            <button class="but" id="george">
+                George Maged
+            </button>
+            <img class="sora" src="georgemaged.jpeg">
+            <div class="info">
+                <p class="para" id="para9">
+                    الاسم : كابتن تايسون
+                    <br>
+                    اوعي تكلمه الا لو بتتخانق ..كابتن تايسون ف كليه علوم الدكاتره بتخاف منه ف بلاش تعصبه ..
+                    <br>
+
+                    كلمه لو بتتخانق لو خايف من اي حاجه لو نازل gym غير كده ابعد عنه لمصلحتك..
+                    <br>
+                    الرقم: 01284478947
+                    <br>
+
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script>
+
+
+
+
+function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+       
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0px";
+  
+    }
+
+
+
+
+
+
+
+    $("#para1").hide();
+    $("#para2").hide();
+    $("#para3").hide();
+    $("#para4").hide();
+    $("#para5").hide();
+    $("#para6").hide();
+    $("#para7").hide();
+    $("#para8").hide();
+    $("#para9").hide();
+
+    function handleclick1() {
+
+        $("#para1").toggle();
+
+    }
+    function handleclick2() {
+
+        $("#para2").toggle();
+
+    }
+    function handleclick3() {
+
+        $("#para3").toggle();
+
+    }
+    function handleclick4() {
+
+        $("#para4").toggle();
+
+    }
+    function handleclick5() {
+
+        $("#para5").toggle();
+
+    }
+    function handleclick6() {
+
+        $("#para6").toggle();
+
+    }
+    function handleclick7() {
+
+        $("#para7").toggle();
+
+    }
+    function handleclick8() {
+
+        $("#para8").toggle();
+
+    }
+    function handleclick9() {
+
+        $("#para9").toggle();
+
+    }
+    $("#marco").click(handleclick3)
+    $("#mina").click(handleclick6)
+    $("#toshii").click(handleclick7)
+    $("#andrew").click(handleclick8)
+    $("#george").click(handleclick9)
+    $("#tony").click(handleclick1)
+    $("#markmaged").click(handleclick5)
+    $("#osama").click(handleclick4)
+    $("#edward").click(handleclick2)
+
+
+</script>
+
+
+
+</html>

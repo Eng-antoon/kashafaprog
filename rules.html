@@ -1,0 +1,300 @@
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Amiri' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <script src="jquery-3.3.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#config-web-app -->
+
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBzqGW84ndxKZ5vh_KBPhdUfSeFv-fCcic",
+            authDomain: "tony-75aa5.firebaseapp.com",
+            databaseURL: "https://tony-75aa5.firebaseio.com",
+            projectId: "tony-75aa5",
+            storageBucket: "tony-75aa5.appspot.com",
+            messagingSenderId: "826946671684",
+            appId: "1:826946671684:web:52a1b4e709a18836"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+    </script>
+
+
+
+
+</head>
+<style>
+    #whole {
+
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+
+    }
+
+    #bord {
+        border: 1px solid black;
+        height: 100%;
+        width: 96%;
+        margin: 1vw;
+        font-size: 5vw;
+        font-weight: bold;
+        padding: 3vw;
+        font-family: amiri;
+    }
+
+
+    button {
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        background-color: #538fbea1;
+        font-size: 24px;
+        border: 1px solid #2d6898;
+    }
+
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: #53F3C7;
+
+
+    }
+
+    .title {
+        margin: 0 50px;
+        color: white;
+        border-bottom: 2px solid white;
+        font-family: Calibri;
+    }
+
+    .content {
+        margin: 30px 50px;
+
+
+    }
+
+    input#uname,
+    input#passwd {
+        color: #e74c3c;
+        background: rgba(0, 0, 0, 0.1);
+        outline: 0;
+        border: none;
+        border-radius: 3px;
+        padding: 5px 15px;
+        transition: all 0.4s;
+    }
+
+    input#uname:focus,
+    input#passwd:focus {
+        color: #2ecc71;
+        background: rgba(0, 0, 0, 0.4);
+        box-shadow: inset 0 0 10px #3498db;
+    }
+
+    button[id=login] {
+        width: 100%;
+        margin: 10px 0;
+        height: 7%;
+    }
+
+
+    .footer {
+        bottom: 0;
+        left: 0;
+        margin: 0 50px;
+        padding: 15px 5px;
+        width: 83%;
+        position: absolute;
+        border-top: 2px solid white;
+    }
+
+
+    #noti {
+        width: 97%;
+        height: 23%;
+        margin: 3vw;
+        padding: 2vw;
+        font-weight: 500;
+        font-family: amiri;
+        color: #042112;
+    }
+
+
+    .enter {
+        width: 97%;
+        height: 11%;
+        margin-bottom: 3vw;
+        padding: 2vw;
+
+    }
+</style>
+
+<body>
+
+    <div id="whole">
+        <h1 style=" font-size: 11vw;   margin-top: 3vw; padding: 3vw; ">Rules</h1>
+        <textarea id="bord" disabled>
+
+
+
+
+
+       </textarea>
+        <textarea id="noti" type="text" placeholder="Enter the notification"> </textarea>
+        <button class="enter" id="too">
+            done
+        </button>
+
+
+
+        <div class="box w3-card-12">
+            <div class="title w3-center">
+                <h3 style="font-size: xx-large;   ">Login</h3>
+            </div>
+            <div class="content">
+
+                <div class="input-cont">
+                    <label class="w3-label w3-text-yellow">Username: </label>
+
+                    <input class="w3-input" type="text" id="uname" required>
+                </div>
+                <br><br>
+                <div class="input-cont">
+                    <label class="w3-label w3-text-yellow">Password: </label>
+
+                    <input class="w3-input" type="password" id="passwd" required>
+                </div>
+                <br>
+                <button class="w3-btn w3-blue" id="login" type="submit" onclick="validate()">Login</button>
+                </form>
+            </div>
+
+        </div>
+
+        <button class="enter" id="ref">
+            Refresh
+
+        </button>
+
+    </div>
+
+
+
+
+
+
+</body>
+
+
+<script>
+
+
+
+
+    $("#noti").hide();
+    $("#too").hide();
+    $("#ref").hide();
+
+
+    function validate() {
+
+        var uname = $("#uname").val();
+        var passwd = $("#passwd").val();
+
+        if (uname == 'kashafa' && passwd == '24621333') {
+            alert('Enter what you want');
+            $("#noti").show();
+            $("#too").show();
+            $("#ref").show();
+            $(".box").hide();
+            return false;
+        } else {
+            alert('Yabny anta katbo 9alat');
+            $("#uname").val('');
+            $("#passwd").val('');
+            return false;
+        }
+
+
+    }
+
+
+
+    var db = firebase.firestore();
+db.collection("kash").get().then(handleDataRead);
+function handleDataRead(objects) {
+var n = objects.size;
+var i = 0;
+while(i < n) {
+var id = objects.docs[i].id;
+var data = objects.docs[i].data();
+alert("id:"+id+" -> "+data.notifi);
+$("#bord").append(data.notifi);
+i = i + 1;
+}
+}
+
+
+
+
+    function handleclick() {
+
+        x = $("#noti").val();
+        $("#noti").val(' ');
+
+        $("#bord").val(x);
+
+        var db = firebase.firestore();
+
+        var object = { notifi: x };
+        db.collection("kash").add(object);
+    }
+
+
+    $("#too").click(handleclick);
+
+
+    function refr() {
+
+        window.location.reload();
+
+
+    }
+
+
+    $("#ref").click(refr);
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</html>

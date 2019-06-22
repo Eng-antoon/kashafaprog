@@ -1,0 +1,385 @@
+<html>
+
+<head>
+
+    <link href='https://fonts.googleapis.com/css?family=Amiri' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <script src="jquery-3.3.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#config-web-app -->
+
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBzqGW84ndxKZ5vh_KBPhdUfSeFv-fCcic",
+            authDomain: "tony-75aa5.firebaseapp.com",
+            databaseURL: "https://tony-75aa5.firebaseio.com",
+            projectId: "tony-75aa5",
+            storageBucket: "tony-75aa5.appspot.com",
+            messagingSenderId: "826946671684",
+            appId: "1:826946671684:web:52a1b4e709a18836"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+    </script>
+
+
+
+</head>
+<style>
+    body {
+        background-color: #53F3C7;
+
+
+    }
+
+    .title {
+
+        border-bottom: 2px solid white;
+        font-family: amiri;
+        color: #2f4a55;
+    }
+
+    .content {
+        margin: 30px 50px;
+
+
+    }
+
+    input#uname,
+    input#passwd {
+        color: #e74c3c;
+        background: rgba(0, 0, 0, 0.1);
+        outline: 0;
+        border: none;
+        border-radius: 3px;
+        padding: 5px 15px;
+        transition: all 0.4s;
+    }
+
+    input#uname:focus,
+    input#passwd:focus {
+        color: #2ecc71;
+        background: rgba(0, 0, 0, 0.4);
+        box-shadow: inset 0 0 10px #3498db;
+    }
+
+    button[id=login] {
+        width: 100%;
+        margin: 10px 0;
+        height: 7%;
+        background-color: #53B4C1;
+        border: 1px solid #2d6898;
+    }
+
+
+    .footer {
+        bottom: 0;
+        left: 0;
+        margin: 0 50px;
+        padding: 15px 5px;
+        width: 83%;
+        position: absolute;
+        border-top: 2px solid white;
+    }
+
+    #handler {
+
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    #upload {
+
+        height: 23%;
+        margin-top: 5vw;
+    }
+
+    #handler {
+
+        height: 64%;
+
+
+    }
+
+    #links {
+        height: 100%;
+        padding: 2vw;
+        border: 1px solid black;
+        background-color: white;
+    }
+
+    .add {
+        height: 21%;
+        margin-top: 5vw;
+        font-size: 6vw;
+        background-color: #53B4C1;
+        border: 1px solid #2d6898;
+
+    }
+
+    body {
+
+        margin: 5vw;
+        padding: 2vw;
+
+    }
+    #home{
+
+        margin: 10px 0;
+        height: 7%;
+        background-color: #53B4C1;
+        border: 1px solid #2d6898;
+
+
+    }
+
+
+
+
+
+    body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.71);
+    overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffffeb;
+    display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+		
+	
+	
+
+    
+</style>
+
+<body>
+       
+
+
+    
+        <span style="font-size:30px;cursor:pointer; color: #011a1eb8;" onclick="openNav()">&#9776; Menu</span>
+
+
+
+    <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="firstpage.html" onclick="closeNav()">Home page</a>
+            <a href="#" id="ref" onclick="closeNav()"> Refresh </a>
+            <a href="points.html" onclick="closeNav()">Points</a>
+            <a href="notifi.html" onclick="closeNav()">Notifications</a>
+            <a href="chicken.html" onclick="closeNav()">Chicken dinner</a>
+            <a href="toreach.html" onclick="closeNav()">To Reach</a>
+            <a href="#" id="log" onclick="closeNav()">Login as Ka2ed</a>
+          </div>
+
+    <h1 class="title"  onclick="closeNav()">
+        Content of the year
+    </h1>
+      
+    <div id="handler"  onclick="closeNav()">
+        <div id="links" style="overflow: scroll;"  onclick="closeNav()">
+
+
+
+        </div>
+        <textarea id="upload">
+
+
+
+</textarea>
+        <button class="add" id="append">add</button>
+    </div>
+
+
+    <div id="boxing" class="box w3-card-12">
+        <div class="title w3-center">
+            <h3 style="font-size: xx-large;   ">Login</h3>
+        </div>
+        <div class="content">
+
+            <div class="input-cont">
+                <label class="w3-label w3-text-yellow">Username: </label>
+
+                <input class="w3-input" type="text" id="uname" required>
+            </div>
+            <br><br>
+            <div class="input-cont">
+                <label class="w3-label w3-text-yellow">Password: </label>
+
+                <input class="w3-input" type="password" id="passwd" required>
+            </div>
+            <br>
+            <button class="w3-btn w3-blue" id="login" type="submit" onclick="validate()">Login</button>
+            </form>
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+<script>
+    $("#upload").hide();
+    $("#append").hide();
+
+    function validate() {
+
+        var uname = $("#uname").val();
+        var passwd = $("#passwd").val();
+
+        if (uname == 'kashafa' && passwd == '24621333') {
+            alert('Atfadal ektab y3m');
+            $("#append").show();
+            $("#upload").show();
+            $(".box").hide();
+            return false;
+        } else {
+            alert('Yabny anta katbo 9alat');
+            $("#uname").val('');
+            $("#passwd").val('');
+            return false;
+        }
+
+
+    }
+
+
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+       
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0px";
+  
+    }
+
+
+
+
+    $(".adding").hide();
+    $("#boxing").hide();
+
+function roo7(){
+
+    $("#boxing").toggle();
+
+
+}
+
+$("#log").click(roo7);
+
+
+function refr() {
+
+window.location.reload();
+
+
+}
+
+
+$("#ref").click(refr);
+
+
+
+    var db = firebase.firestore();
+db.collection("linkat").onSnapshot(handleDataRead);
+function handleDataRead(objects) {
+var n = objects.size;
+var i = 0;
+while(i < n) {
+var id = objects.docs[i].id;
+var data = objects.docs[i].data();
+$("#links").append("<br>" + data.cont + "<br>");
+i = i + 1;
+}
+}
+
+
+
+
+
+
+    function handleclick() {
+
+        x = $("#upload").val();
+        $("#upload").val(' ');
+
+
+
+        $("#links").append("<br>" + x + "<br>");
+
+
+
+        var object = {cont:x };
+db.collection("linkat").add(object);
+
+
+    }
+
+
+
+    $("#append").click(handleclick);
+
+
+
+</script>
+
+
+
+</html>

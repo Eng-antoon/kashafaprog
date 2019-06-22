@@ -1,0 +1,543 @@
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Amiri' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <script src="jquery-3.3.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#config-web-app -->
+
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBzqGW84ndxKZ5vh_KBPhdUfSeFv-fCcic",
+            authDomain: "tony-75aa5.firebaseapp.com",
+            databaseURL: "https://tony-75aa5.firebaseio.com",
+            projectId: "tony-75aa5",
+            storageBucket: "tony-75aa5.appspot.com",
+            messagingSenderId: "826946671684",
+            appId: "1:826946671684:web:52a1b4e709a18836"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+    </script>
+
+
+
+
+</head>
+<style>
+    #whole {
+
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        align-items: center;
+
+    }
+
+    .showing {
+        border: 1px solid black;
+        height: fit-content;
+        width: 87%;
+        margin: 1vw;
+        font-size: 5vw;
+        font-weight: bold;
+        padding: 3vw;
+        font-family: amiri;
+        background-color: white;
+    }
+
+    #dis {
+
+        border: 1px solid black;
+        height: fit-content;
+        width: 93%;
+        margin: 1vw;
+        font-size: 5vw;
+        font-weight: bold;
+        padding: 3vw;
+        font-family: amiri;
+        background-color: white;
+        margin-bottom: 3vw;
+
+
+    }
+
+    #controller {
+
+        display: flex;
+        flex-direction: row;
+        margin: 7vw;
+        padding: 1vw;
+
+    }
+
+
+    button {
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        background-color: #538fbea1;
+        font-size: 24px;
+        border: 1px solid #2d6898;
+        border-radius: 5%;
+        margin-bottom: 2vw;
+    }
+
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: #53F3C7;
+
+
+    }
+
+    .title {
+        margin: 0 50px;
+        color: white;
+        border-bottom: 2px solid white;
+        font-family: Calibri;
+    }
+
+    .content {
+        margin: 30px 50px;
+
+
+    }
+
+    input#uname,
+    input#passwd {
+        color: #e74c3c;
+        background: rgba(0, 0, 0, 0.1);
+        outline: 0;
+        border: none;
+        border-radius: 3px;
+        padding: 5px 15px;
+        transition: all 0.4s;
+    }
+
+    input#uname:focus,
+    input#passwd:focus {
+        color: #2ecc71;
+        background: rgba(0, 0, 0, 0.4);
+        box-shadow: inset 0 0 10px #3498db;
+    }
+
+    button[id=login] {
+        width: 100%;
+        margin: 10px 0;
+        height: 7%;
+    }
+
+
+    .footer {
+        bottom: 0;
+        left: 0;
+        margin: 0 50px;
+        padding: 15px 5px;
+        width: 83%;
+        position: absolute;
+        border-top: 2px solid white;
+    }
+
+
+    .noti {
+        width: 97%;
+        height: 23%;
+        margin: 3vw;
+        padding: 2vw;
+        font-weight: 500;
+        font-family: amiri;
+        color: #042112;
+    }
+
+
+    .enter {
+        width: 97%;
+        height: 11%;
+        margin-bottom: 3vw;
+        padding: 2vw;
+
+    }
+
+
+
+
+
+
+    body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+  padding: 2vw;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.71);
+    overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+		
+	
+</style>
+
+<body>
+
+
+    <span style="font-size:30px;cursor:pointer; color: #011a1eb8;" onclick="openNav()">&#9776; Menu</span>
+
+
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="firstpage.html" onclick="closeNav()">Home page</a>
+        <a href="#" id="ref" onclick="closeNav()"> Refresh </a>
+        <a href="content.html" onclick="closeNav()">Content</a>
+        <a href="points.html" onclick="closeNav()">Points</a>
+        <a href="chicken.html" onclick="closeNav()">Chicken dinner</a>
+        <a href="toreach.html" onclick="closeNav()">To Reach</a>
+        <a href="#" id="log" onclick="closeNav()">Login as Ka2ed</a>
+      <!--  <a href="#" id="commenter" onclick="closeNav()">Leave a comment</a> -->
+    </div>
+
+    <div id="whole" onclick="closeNav()">
+
+
+        <h1 style=" font-size: 11vw;   margin-top: 3vw; padding: 3vw; ">Notification</h1>
+
+        <div class="showing" id="bord" disabled onclick="closeNav()">
+
+
+
+
+
+        </div>
+
+        <!--the 2nd border to add the comments-->
+     <!--   
+        <div class="showing" id="ider" disabled>
+
+
+
+
+
+            </div>  -->
+        <textarea id="dis" style="overflow: scroll;" onclick="closeNav()">
+
+
+
+
+
+       </textarea>
+        <textarea class="noti" id="top" type="text" placeholder="Enter the notification"> </textarea>
+        <button class="enter" id="too">
+            done
+        </button>
+
+
+
+        <div id="boxing" class="box w3-card-12">
+            <div class="title w3-center">
+                <h3 style="font-size: xx-large;   ">Login</h3>
+            </div>
+            <div class="content">
+
+                <div class="input-cont">
+                    <label class="w3-label w3-text-yellow">Username: </label>
+
+                    <input class="w3-input" type="text" id="uname" required>
+                </div>
+                <br><br>
+                <div class="input-cont">
+                    <label class="w3-label w3-text-yellow">Password: </label>
+
+                    <input class="w3-input" type="password" id="passwd" required>
+                </div>
+                <br>
+                <button class="w3-btn w3-blue" id="login" type="submit" onclick="validate()">Login</button>
+                </form>
+            </div>
+
+        </div>
+
+
+        <textarea class="noti" id="coco" type="text" placeholder="Enter the notification"> </textarea>
+
+
+        <button class="enter" id="comment">
+            Comment
+        </button>
+    </div>
+
+
+
+
+
+
+</body>
+
+
+<script>
+
+
+
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+       
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0px";
+  
+    }
+
+
+
+
+
+    function roo7() {
+
+        $("#boxing").toggle();
+
+
+    }
+
+    $("#log").click(roo7);
+
+
+
+
+
+
+    $(".adding").hide();
+    $("#boxing").hide();
+    $("#top").hide();
+    $("#too").hide();
+    
+    $("#comment").hide();
+    $("#coco").hide();
+    $("#dis").hide();
+    function validate() {
+
+        var uname = $("#uname").val();
+        var passwd = $("#passwd").val();
+
+        if (uname == 'kashafa' && passwd == '24621333') {
+            alert('Enter what you want');
+            $("#noti").show();
+            $("#too").show();
+            $("#ref").show();
+            $(".box").hide();
+            $("#dis").show();
+
+            return false;
+        } else {
+            alert('Yabny anta katbo 9alat');
+            $("#uname").val('');
+            $("#passwd").val('');
+            return false;
+        }
+
+
+    }
+
+
+    function han() {
+
+
+        $("#comment").toggle();
+        $("#coco").toggle();
+    }
+
+
+    $("#commenter").click(han);
+
+
+
+
+    var db = firebase.firestore();
+    db.collection("kash").onSnapshot(handleDataRead3);
+    function handleDataRead3(objects) {
+        var n = objects.size;
+        var i = 0;
+        while (i < n) {
+            var id = objects.docs[i].id;
+            var data = objects.docs[i].data();
+            i = i + 1;
+            yala(data);
+        }
+    }
+
+
+
+
+
+    function yala(data) {
+
+        $("#bord").append("<br>" + data.notifi + "<br>");
+
+    }
+
+
+    function handleclick() {
+
+        x = $("#noti").val();
+        $("#noti").val(' ');
+
+        $("#bord").append("<br>" + x + "<br>");
+
+        var db = firebase.firestore();
+        db.collection("kash").onSnapshot(handleDataRead);
+        function handleDataRead(objects) {
+            var n = objects.size;
+            var i = 0;
+            while (i < n) {
+                var id = objects.docs[i].id;
+                var data = objects.docs[i].data();
+                i = i + 1;
+                var object = { notifi: x };
+                db.collection("kash").add(object);
+            }
+        }
+    }
+
+
+
+    $("#too").click(handleclick);
+
+
+    function refr() {
+
+        window.location.reload();
+
+
+    }
+
+
+    $("#ref").click(refr);
+
+
+
+
+  // for giving a comment in the 2nd border
+/*
+
+
+    var db = firebase.firestore();
+    db.collection("comm").onSnapshot(handleDataRead1);
+    function handleDataRead1(objects) {
+        var n = objects.size;
+        var i = 0;
+        while (i < n) {
+            var id = objects.docs[i].id;
+            var data = objects.docs[i].data();
+            i = i + 1;
+            yala1(data);
+        }
+    }
+
+
+
+
+
+    function yala1(data) {
+
+        $("#ider").append("<br>" + data.commentat + "<br>");
+
+    }
+ 
+
+
+    function handleclick1() {
+
+        x = $("#coco").val();
+        $("#coco").val(' ');
+
+        $("#ider").append("<br>" + x + "<br>");
+
+        var db = firebase.firestore();
+        db.collection("comm").onSnapshot(handleDataRead2);
+        function handleDataRead2(objects) {
+            var n = objects.size;
+            var i = 0;
+            while (i < n) {
+                var id = objects.docs[i].id;
+                var data = objects.docs[i].data();
+                i = i + 1;
+                var object = { commentat: x };
+                db.collection("comm").add(object);
+            }
+        }
+
+    }
+
+
+
+    $("#comment").click(handleclick1);
+
+*/
+
+
+
+
+
+
+</script>
+
+
+
+</html>

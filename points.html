@@ -1,0 +1,993 @@
+<html>
+
+<head>
+
+
+    <link href='https://fonts.googleapis.com/css?family=Amiri' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <script src="jquery-3.3.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBzqGW84ndxKZ5vh_KBPhdUfSeFv-fCcic",
+            authDomain: "tony-75aa5.firebaseapp.com",
+            databaseURL: "https://tony-75aa5.firebaseio.com",
+            projectId: "tony-75aa5",
+            storageBucket: "tony-75aa5.appspot.com",
+            messagingSenderId: "826946671684",
+            appId: "1:826946671684:web:52a1b4e709a18836"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+    </script>
+
+
+</head>
+
+<style>
+  
+
+
+.point1{
+
+
+       padding: 2%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #00000073;
+    margin: 1%;
+    height: fit-content;
+
+
+}
+
+
+
+
+.team1{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+
+
+}
+
+
+
+
+.team1point{
+ 
+
+    height: 13vw;
+    width: 100%;
+    margin-bottom: 2vw;
+    background-color: beige;
+
+}
+
+
+
+
+.add{
+
+
+    height: 62%;
+    width: 100%;
+    border: 1px solid #099770;
+   background-color: #8BFA56;
+   border-radius: 3%;
+
+
+
+
+}
+.adding{
+
+    height: fit-content;
+    margin: 3vw;
+
+}
+.morab3point{
+
+
+        height: 11vw;
+}
+
+
+
+button{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #538fbea1;
+    font-size: 24px;
+    border: 1px solid #2d6898;
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body{
+background-color: #53F3C7;
+
+
+    }
+
+	.title {
+		margin: 0 50px;
+		color: white;
+		border-bottom: 2px solid white;
+		font-family: Calibri;
+	}
+	.content {
+		margin: 30px 50px;
+
+    }
+		
+		input#uname, input#passwd {
+			color: #e74c3c;
+			background: rgba(0, 0, 0, 0.1);
+			outline: 0;
+			border: none;
+			border-radius: 3px;
+			padding: 5px 15px;
+			transition: all 0.4s;
+		}
+		input#uname:focus, input#passwd:focus {
+			color: #2ecc71;
+			background: rgba(0, 0, 0, 0.4);
+			box-shadow: inset 0 0 10px #3498db;
+		}
+		
+		button[id=login] {
+			width: 100%;
+			margin: 10px 0;
+            height: 7%;
+		}
+		
+	
+	.footer {
+		bottom: 0;
+		left: 0;
+		margin: 0 50px;
+		padding: 15px 5px;
+		width: 83%;
+		position: absolute;
+		border-top: 2px solid white;
+
+    }
+    #controller{
+
+        display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2vw;
+    padding: 1vw;
+
+    }
+		
+
+
+
+
+
+
+    body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+  padding: 2vw;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.71);
+    overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+		
+	
+	
+
+
+
+
+</style>
+
+<body  style="    background-size: cover; background-position: center;   " > 
+
+        <span style="font-size:30px;cursor:pointer; color: #011a1eb8;" onclick="openNav()">&#9776; Menu</span>
+
+
+
+    <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="firstpage.html" onclick="closeNav()">Home page</a>
+            <a href="#" id="ref" onclick="closeNav()"> Refresh </a>
+            <a href="content.html" onclick="closeNav()">Content</a>
+            <a href="notifi.html" onclick="closeNav()">Notifications</a>
+            <a href="chicken.html" onclick="closeNav()">Chicken dinner</a>
+            <a href="toreach.html" onclick="closeNav()">To Reach</a>
+            <a href="#" id="log" onclick="closeNav()">Login as Ka2ed</a>
+          </div>
+    
+        <div id="wholepage" >
+
+ 
+
+
+        </div>
+        <div id="totalteams" onclick="closeNav()">
+
+            <div class="point1">
+                <div class="team1">
+                    <h1>
+                        team 1
+                    </h1>
+
+                    <input id="dash1" class="morab3point" type="number" value="0" disabled>
+                </div>
+                <div class="adding">
+                    <input id="toto1" class="team1point" type="number">
+                    <button class="add" id="add1">
+                        add
+                    </button>
+
+
+                </div>
+            </div>
+
+            <!--_______________________________________________________________________________________________________________________-->
+
+            <div class="point1">
+                <div class="team1">
+                    <h1>
+                        team 2
+                    </h1>
+
+                    <input id="dash2" class="morab3point" type="number" value="0" disabled>
+                </div>
+                <div class="adding">
+                    <input id="toto2" class="team1point" type="number">
+                    <button class="add" id="add2">
+                        add
+                    </button>
+
+
+                </div>
+            </div>
+
+            <!--_______________________________________________________________________________________________________________________-->
+
+
+            <div class="point1">
+                <div class="team1">
+                    <h1>
+                        team 3
+                    </h1>
+
+                    <input id="dash3" class="morab3point" type="number" value="0" disabled>
+                </div>
+                <div class="adding">
+                    <input id="toto3" class="team1point" type="number">
+                    <button class="add" id="add3">
+                        add
+                    </button>
+
+
+                </div>
+            </div>
+
+            <!--_______________________________________________________________________________________________________________________-->
+
+
+
+            <div class="point1">
+                <div class="team1">
+                    <h1>
+                        team 4
+                    </h1>
+
+                    <input id="dash4" class="morab3point" type="number" value="0" disabled>
+                </div>
+                <div class="adding">
+                    <input id="toto4" class="team1point" type="number">
+                    <button class="add" id="add4">
+                        add
+                    </button>
+
+
+                </div>
+            </div>
+
+            <!--_______________________________________________________________________________________________________________________-->
+
+
+            <div class="point1">
+                <div class="team1">
+                    <h1>
+                        team 5
+                    </h1>
+
+                    <input id="dash5" class="morab3point" type="number" value="0" disabled>
+                </div>
+                <div class="adding">
+                    <input id="toto5" class="team1point" type="number">
+                    <button class="add" id="add5">
+                        add
+                    </button>
+
+
+                </div>
+            </div>
+
+
+            <!--_______________________________________________________________________________________________________________________-->
+
+
+            <div class="point1">
+                <div class="team1">
+                    <h1>
+                        team 6
+                    </h1>
+
+                    <input id="dash6" class="morab3point" type="number" value="0" disabled>
+                </div>
+                <div class="adding">
+                    <input id="toto6" class="team1point" type="number">
+                    <button class="add" id="add6">
+                        add
+                    </button>
+
+
+                </div>
+            </div>
+
+
+            <!--_______________________________________________________________________________________________________________________-->
+
+
+            <div class="point1">
+                <div class="team1">
+                    <h1>
+                        team 7
+                    </h1>
+
+                    <input id="dash7" class="morab3point" type="number" value="0" disabled>
+                </div>
+                <div class="adding">
+                    <input id="toto7" class="team1point" type="number">
+                    <button class="add" id="add7">
+                        add
+                    </button>
+
+
+                </div>
+            </div>
+
+
+            <!--_______________________________________________________________________________________________________________________-->
+
+
+            <div class="point1">
+                <div class="team1">
+                    <h1>
+                        team 8
+                    </h1>
+
+                    <input id="dash8" class="morab3point" type="number" value="0" disabled>
+                </div>
+                <div class="adding">
+                    <input id="toto8" class="team1point" type="number">
+                    <button class="add" id="add8">
+                        add
+                    </button>
+
+
+                </div>
+            </div>
+
+            <!--_______________________________________________________________________________________________________________________-->
+
+
+
+            <div id="boxing" class="box w3-card-12">
+                <div class="title w3-center">
+                    <h3 style="font-size: xx-large;   ">Login</h3>
+                </div>
+                <div class="content">
+
+                    <div class="input-cont">
+                        <label class="w3-label w3-text-yellow">Username: </label>
+
+                        <input class="w3-input" type="text" id="uname" required>
+                    </div>
+                    <br><br>
+                    <div class="input-cont">
+                        <label class="w3-label w3-text-yellow">Password: </label>
+
+                        <input class="w3-input" type="password" id="passwd" required>
+                    </div>
+                    <br>
+                    <button class="w3-btn w3-blue" id="login" type="submit" onclick="validate()">Login</button>
+                    </form>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+</body>
+
+
+<script>
+
+function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+       
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0px";
+  
+    }
+
+
+
+
+    $(".adding").hide();
+    $("#boxing").hide();
+
+function roo7(){
+
+    $("#boxing").toggle();
+
+
+}
+
+$("#log").click(roo7);
+
+    function validate() {
+        var uname = $("#uname").val();
+        var passwd = $("#passwd").val();
+
+        if (uname == 'kashafa' && passwd == '24621333') {
+            alert('براحة علي العيال  !');
+            $(".adding").show();
+            $(".box").hide();
+            return false;
+        } else {
+            alert('اتفرج و انت ساكت !');
+            return false;
+        }
+    }
+
+
+
+
+
+
+
+    var db = firebase.firestore();
+    db.collection("team1").onSnapshot(handleDataRead1);
+    function handleDataRead1(objects) {
+        var n = objects.size;
+        var i = 0;
+        while (i < n) {
+            var id = objects.docs[i].id;
+            var data = objects.docs[i].data();
+            i = i + 1;
+            printscore1(data);
+        }
+    }
+    //________________________________________________________________________________________________________
+    function printscore1(data) {
+
+        $("#dash1").val(data.points);
+
+    }
+    //__________________________________________________________________________________________________________
+
+    function handleclick1() {
+        var x = parseInt($("#toto1").val());
+        if ($("#toto1").val().length < 1) {
+            x = 0;
+        }
+        var y = parseInt($("#dash1").val());
+        z = x + y;
+        $("#dash1").val(x + y);
+        $("#toto1").val(' ');
+        var db = firebase.firestore();
+
+        db.collection("team1").onSnapshot(handleDataRead);
+        function handleDataRead(objects) {
+            var n = objects.size;
+            var i = 0;
+            while (i < n) {
+                var id = objects.docs[i].id;
+                var data = objects.docs[i].data();
+                i = i + 1;
+                var object = { points: z };
+                db.collection("team1").doc(id).set(object);
+            }
+        }
+    }
+
+    $("#add1").click(handleclick1);
+    //________________________________________________________________________________________________________
+    //________________________________________________________________________________________________________
+    //________________________________________________________________________________________________________
+
+
+
+    var db = firebase.firestore();
+    db.collection("team2").onSnapshot(handleDataRead2);
+    function handleDataRead2(objects) {
+        var n = objects.size;
+        var i = 0;
+        while (i < n) {
+            var id = objects.docs[i].id;
+            var data = objects.docs[i].data();
+            i = i + 1;
+            printscore2(data);
+        }
+    }
+    //________________________________________________________________________________________________________
+    function printscore2(data) {
+
+        $("#dash2").val(data.points);
+
+    }
+    //__________________________________________________________________________________________________________
+
+    function handleclick2() {
+        var x = parseInt($("#toto2").val());
+        if ($("#toto2").val().length < 1) {
+            x = 0;
+        }
+        var y = parseInt($("#dash2").val());
+        z = x + y;
+        $("#dash2").val(x + y);
+        $("#toto2").val(' ');
+        var db = firebase.firestore();
+
+        db.collection("team2").onSnapshot(handleDataRead);
+        function handleDataRead(objects) {
+            var n = objects.size;
+            var i = 0;
+            while (i < n) {
+                var id = objects.docs[i].id;
+                var data = objects.docs[i].data();
+                i = i + 1;
+                var object = { points: z };
+                db.collection("team2").doc(id).set(object);
+            }
+        }
+    }
+
+    $("#add2").click(handleclick2);
+
+
+
+    //________________________________________________________________________________________________________
+    //________________________________________________________________________________________________________
+    //________________________________________________________________________________________________________
+
+
+
+    var db = firebase.firestore();
+    db.collection("team3").onSnapshot(handleDataRead3);
+    function handleDataRead3(objects) {
+        var n = objects.size;
+        var i = 0;
+        while (i < n) {
+            var id = objects.docs[i].id;
+            var data = objects.docs[i].data();
+            i = i + 1;
+            printscore3(data);
+        }
+    }
+    //________________________________________________________________________________________________________
+    function printscore3(data) {
+
+        $("#dash3").val(data.points);
+
+    }
+    //__________________________________________________________________________________________________________
+
+    function handleclick3() {
+        var x = parseInt($("#toto3").val());
+        if ($("#toto3").val().length < 1) {
+            x = 0;
+        }
+        var y = parseInt($("#dash3").val());
+        z = x + y;
+        $("#dash3").val(x + y);
+        $("#toto3").val(' ');
+        var db = firebase.firestore();
+
+        db.collection("team3").onSnapshot(handleDataRead);
+        function handleDataRead(objects) {
+            var n = objects.size;
+            var i = 0;
+            while (i < n) {
+                var id = objects.docs[i].id;
+                var data = objects.docs[i].data();
+                i = i + 1;
+                var object = { points: z };
+                db.collection("team3").doc(id).set(object);
+            }
+        }
+    }
+
+    $("#add3").click(handleclick3);
+
+
+
+
+    //________________________________________________________________________________________________________
+    //________________________________________________________________________________________________________
+    //________________________________________________________________________________________________________
+
+
+
+    var db = firebase.firestore();
+    db.collection("team4").onSnapshot(handleDataRead4);
+    function handleDataRead4(objects) {
+        var n = objects.size;
+        var i = 0;
+        while (i < n) {
+            var id = objects.docs[i].id;
+            var data = objects.docs[i].data();
+            i = i + 1;
+            printscore4(data);
+        }
+    }
+    //________________________________________________________________________________________________________
+    function printscore4(data) {
+
+        $("#dash4").val(data.points);
+
+    }
+    //__________________________________________________________________________________________________________
+
+    function handleclick4() {
+        var x = parseInt($("#toto4").val());
+        if ($("#toto4").val().length < 1) {
+            x = 0;
+        }
+        var y = parseInt($("#dash4").val());
+        z = x + y;
+        $("#dash4").val(x + y);
+        $("#toto4").val(' ');
+        var db = firebase.firestore();
+
+        db.collection("team4").onSnapshot(handleDataRead);
+        function handleDataRead(objects) {
+            var n = objects.size;
+            var i = 0;
+            while (i < n) {
+                var id = objects.docs[i].id;
+                var data = objects.docs[i].data();
+                i = i + 1;
+                var object = { points: z };
+                db.collection("team4").doc(id).set(object);
+            }
+        }
+    }
+
+    $("#add4").click(handleclick4);
+
+
+
+
+
+
+    //________________________________________________________________________________________________________
+    //________________________________________________________________________________________________________
+    //________________________________________________________________________________________________________
+
+
+
+    var db = firebase.firestore();
+    db.collection("team5").onSnapshot(handleDataRead5);
+    function handleDataRead5(objects) {
+        var n = objects.size;
+        var i = 0;
+        while (i < n) {
+            var id = objects.docs[i].id;
+            var data = objects.docs[i].data();
+            i = i + 1;
+            printscore5(data);
+        }
+    }
+    //________________________________________________________________________________________________________
+    function printscore5(data) {
+
+        $("#dash5").val(data.points);
+
+    }
+    //__________________________________________________________________________________________________________
+
+    function handleclick5() {
+        var x = parseInt($("#toto5").val());
+        if ($("#toto5").val().length < 1) {
+            x = 0;
+        }
+        var y = parseInt($("#dash5").val());
+        z = x + y;
+        $("#dash5").val(x + y);
+        $("#toto5").val(' ');
+        var db = firebase.firestore();
+
+        db.collection("team5").onSnapshot(handleDataRead);
+        function handleDataRead(objects) {
+            var n = objects.size;
+            var i = 0;
+            while (i < n) {
+                var id = objects.docs[i].id;
+                var data = objects.docs[i].data();
+                i = i + 1;
+                var object = { points: z };
+                db.collection("team5").doc(id).set(object);
+            }
+        }
+    }
+
+    $("#add5").click(handleclick5);
+
+
+
+
+
+
+
+    //________________________________________________________________________________________________________
+    //________________________________________________________________________________________________________
+    //________________________________________________________________________________________________________
+
+
+
+    var db = firebase.firestore();
+    db.collection("team6").onSnapshot(handleDataRead6);
+    function handleDataRead6(objects) {
+        var n = objects.size;
+        var i = 0;
+        while (i < n) {
+            var id = objects.docs[i].id;
+            var data = objects.docs[i].data();
+            i = i + 1;
+            printscore6(data);
+        }
+    }
+    //________________________________________________________________________________________________________
+    function printscore6(data) {
+
+        $("#dash6").val(data.points);
+
+    }
+    //__________________________________________________________________________________________________________
+
+    function handleclick6() {
+        var x = parseInt($("#toto6").val());
+        if ($("#toto6").val().length < 1) {
+            x = 0;
+        }
+        var y = parseInt($("#dash6").val());
+        z = x + y;
+        $("#dash6").val(x + y);
+        $("#toto6").val(' ');
+        var db = firebase.firestore();
+
+        db.collection("team6").onSnapshot(handleDataRead);
+        function handleDataRead(objects) {
+            var n = objects.size;
+            var i = 0;
+            while (i < n) {
+                var id = objects.docs[i].id;
+                var data = objects.docs[i].data();
+                i = i + 1;
+                var object = { points: z };
+                db.collection("team6").doc(id).set(object);
+            }
+        }
+    }
+
+    $("#add6").click(handleclick6);
+
+
+
+    //________________________________________________________________________________________________________
+    //________________________________________________________________________________________________________
+    //________________________________________________________________________________________________________
+
+
+
+    var db = firebase.firestore();
+    db.collection("team7").onSnapshot(handleDataRead7);
+    function handleDataRead7(objects) {
+        var n = objects.size;
+        var i = 0;
+        while (i < n) {
+            var id = objects.docs[i].id;
+            var data = objects.docs[i].data();
+            i = i + 1;
+            printscore7(data);
+        }
+    }
+    //________________________________________________________________________________________________________
+    function printscore7(data) {
+
+        $("#dash7").val(data.points);
+
+    }
+    //__________________________________________________________________________________________________________
+
+    function handleclick7() {
+        var x = parseInt($("#toto7").val());
+        if ($("#toto7").val().length < 1) {
+            x = 0;
+        }
+        var y = parseInt($("#dash7").val());
+        z = x + y;
+        $("#dash7").val(x + y);
+        $("#toto7").val(' ');
+        var db = firebase.firestore();
+
+        db.collection("team6").onSnapshot(handleDataRead);
+        function handleDataRead(objects) {
+            var n = objects.size;
+            var i = 0;
+            while (i < n) {
+                var id = objects.docs[i].id;
+                var data = objects.docs[i].data();
+                i = i + 1;
+                var object = { points: z };
+                db.collection("team7").doc(id).set(object);
+            }
+        }
+    }
+
+    $("#add7").click(handleclick7);
+
+
+
+
+    //________________________________________________________________________________________________________
+    //________________________________________________________________________________________________________
+    //________________________________________________________________________________________________________
+
+
+
+    var db = firebase.firestore();
+    db.collection("team8").onSnapshot(handleDataRead8);
+    function handleDataRead8(objects) {
+        var n = objects.size;
+        var i = 0;
+        while (i < n) {
+            var id = objects.docs[i].id;
+            var data = objects.docs[i].data();
+            i = i + 1;
+            printscore8(data);
+        }
+    }
+    //________________________________________________________________________________________________________
+    function printscore8(data) {
+
+        $("#dash8").val(data.points);
+
+    }
+    //__________________________________________________________________________________________________________
+
+    function handleclick8() {
+        var x = parseInt($("#toto8").val());
+        if ($("#toto8").val().length < 1) {
+            x = 0;
+        }
+        var y = parseInt($("#dash8").val());
+        z = x + y;
+        $("#dash8").val(x + y);
+        $("#toto8").val(' ');
+        var db = firebase.firestore();
+
+        db.collection("team8").onSnapshot(handleDataRead);
+        function handleDataRead(objects) {
+            var n = objects.size;
+            var i = 0;
+            while (i < n) {
+                var id = objects.docs[i].id;
+                var data = objects.docs[i].data();
+                i = i + 1;
+                var object = { points: z };
+                db.collection("team8").doc(id).set(object);
+            }
+        }
+    }
+
+    $("#add8").click(handleclick8);
+
+
+
+
+    function refr() {
+
+window.location.reload();
+
+
+}
+
+
+$("#ref").click(refr);
+
+
+</script>
+
+
+
+</html>
